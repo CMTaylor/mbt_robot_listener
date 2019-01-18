@@ -3,12 +3,12 @@ Resource          Resources/dut.robot
 
 *** Keywords ***
 Select Product From Product Table
-    [Arguments]  ${product_id}
-    DUT.Select Product To Add   ${product_id}
+    [Arguments]    ${product_id}
+    DUT.Select Product To Add    ${product_id}
 
 Select Product From Selected Product Table
-    [Arguments]  ${product_id}
-    DUT.Select Product To Remove  ${product_id}
+    [Arguments]    ${product_id}
+    DUT.Select Product To Remove    ${product_id}
 
 Press Select Button
     DUT.Press Add Product

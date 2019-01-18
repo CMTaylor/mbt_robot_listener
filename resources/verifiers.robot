@@ -1,5 +1,5 @@
 *** Settings ***
-Library  dut.dut.DUT  WITH NAME  DUT
+Resource          Resources/dut.robot
 
 *** Variables ***
 ${CURRENT_PRODUCT_NUMBER}   0

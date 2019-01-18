@@ -4,12 +4,13 @@ import time
 class DUT(object):
     ROBOT_LIBRARY_SCOPE = 'TEST SUITE'
 
-    def __init__(self):
+    def __init__(self, sleep_delay=0):
         self.available_products = []
         self.selected_products = []
         self.selected_product_name = ''
         self.remove_product_name = ''
         self.checkout = False
+        self.sleep_delay = int(sleep_delay)
         self.initialize()
 
     def initialize(self):
@@ -36,27 +37,27 @@ class DUT(object):
 
     def press_add_product(self):
         self.selected_products.append(self.selected_product_name)
-        time.sleep(2)
+        time.sleep(self.sleep_delay)
 
     def press_remove_product(self):
         self.selected_products = [product for product in self.selected_products if product != self.remove_product_name]
-        time.sleep(2)
+        time.sleep(self.sleep_delay)
 
     def press_empty_cart(self):
         self.selected_products = []
         self.checkout = False
-        time.sleep(2)
+        time.sleep(self.sleep_delay)
 
     def press_checkout(self):
         self.checkout = True
-        time.sleep(2)
+        time.sleep(self.sleep_delay)
 
     def press_finish_checkout(self):
         self.checkout = False
         # Next line is commented on purpose, it triggers a test failure when transition from Checkout state to Empty Cart state is made
         # Uncomment to fix the failure
         # self.selected_products = []
-        time.sleep(2)
+        time.sleep(self.sleep_delay)
 
     def empty_cart_button_is_visible(self):
         return bool(self.selected_products)

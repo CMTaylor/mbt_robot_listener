@@ -1,5 +1,5 @@
 *** Settings ***
-Library  dut.dut.DUT  WITH NAME   DUT
+Resource          Resources/dut.robot
 
 *** Keywords ***
 Only One Item Available

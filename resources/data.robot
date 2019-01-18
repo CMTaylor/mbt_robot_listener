@@ -1,6 +1,6 @@
 *** Settings ***
-Library   Collections
-Library   dut.dut.DUT   WITH NAME   DUT
+Resource          Resources/dut.robot
+Library           Collections
 
 *** Keywords ***
 Select Available Product ID

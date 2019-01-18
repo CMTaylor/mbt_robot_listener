@@ -1,3 +1,6 @@
+# Format:
+# <State Name>:
+# - [<State transition keyword name from models/transitions.robot>, <Next State>, <???>, <???>]
 INIT:
 - [Transition From Initial To Empty Cart, Empty Cart, null, 10]
 Empty Cart:
